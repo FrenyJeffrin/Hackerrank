@@ -1,2 +1,7 @@
 from collections import Counter
-[print(*i) for i in Counter(sorted(input())).most_common(3)]
+
+S = input()
+counts = sorted(Counter(S).items(), key=lambda x: (-x[1], x[0]))
+
+for i in counts[:3]:
+    print(*i)
